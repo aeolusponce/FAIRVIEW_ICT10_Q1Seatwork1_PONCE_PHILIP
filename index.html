@@ -7,75 +7,115 @@
 <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
 <title>Seatwork 1</title>
 
+<style>
+  body{
+    font-family: Arial, sans-serif;
+    max-width: 480px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    color: #222;
+  }
+ 
+  h1{
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+ 
+  #div1 > div{
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+ 
+  input[type="number"]{
+    padding: 0.5rem;
+    margin: 0.3rem 0;
+    width: 100%;
+    max-width: 260px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+ 
+  button{
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    background: #3f6659;
+    color: #fff;
+    cursor: pointer;
+  }
+ 
+  button:hover{
+    background: #2c4a40;
+  }
+ 
+  #output1{
+    margin-top: 0.8rem;
+    font-weight: bold;
+  }
+</style>
 
 </head>
 <body>
 
-
-<h1>Seatwork #1</h1>
-
-
-<div id="div1"></div>
-<br>
-
-
-       <form action="">
-        <input type="number" id="input1" placeholder="Enter 1st Number Value">
-        <br>
-
-
-         <input type="number" id="input2" placeholder="Enter 2nd Number Value">
-        <br>
-
-
-        <button type="button" py-click="adding_numbers">Calculate</button>
-
-
-<br>
-
+<h1>I.C.T. Seatwork #1 Q1</h1>
+ 
+  <div class="card">
+    <h2>About me</h2>
+    <div id="div1"></div>
+  </div>
+ 
+  <div class="card">
+    <h2>Calculating The Sum of Two Values</h2>
+    <form action="">
+      <div class="row">
+        <input type="number" id="input1" placeholder="First number">
+        <input type="number" id="input2" placeholder="Second number">
+      </div>
+      <button type="button" py-click="adding_numbers">Calculate</button>
+      <div id="output1"></div>
+    </form>
+  </div>
+</main>
 
 <div id="output1"></div>
 <script type="py">
 from pyscript import display
 from js import document
 
+name = "Philip Ponce" #string
+age = 15 #integer
+height1 = 167.6 #float
+countries_ = ["Switzerland", "Japan", "Canada"] #list 
+student_type = False #boolean
 
-display(target="div1") #literal object
+my_info = {
+    "color": "Black",
+    "car_brand": "Porsche",
+    "shoe_size": 8,
+    "best_friend": "Carlos Borromeo"
+} #dictionary
 
+favorite_fruits = {"Plum", "Mango", "Banana", "Aratilis", "Grapes"} #set
+days = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday") #tuple
 
-#variable objects
-name = "Name: Philip Ponce" #string 
-age = "Age: 15" #integer
-height = "Height: 167.6cm" #float
-countries = "Countries wanting to visit: Switzerland, Japan, Canada" #list
-student_type = "New Student: False" #bool
-color = "Favorite Color: Black" #dictionary
-car_brand = "Favorite Car Brand: Porsche" #dictionary
-shoe_size = "Shoe Size: 8" #dictionary
-best_friend = "Best Friend: Carlos Borromeo" #dictionary
-favorite_fruits = "Favorite Fruits: Plum, Mango, Banana, Aratilis, Grapes" #tuple
-days = "Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday" #tuple
-
-
-
-
-display(name, target="div1") 
-display(age, target="div1")
-display(height, target="div1")
-display(countries, target="div1")
-display(student_type, target="div1")
-display(color, target="div1")
-display(car_brand, target="div1")
-display(shoe_size, target="div1")
-display(best_friend, target="div1")
-display(favorite_fruits, target="div1")
-display(days, target="div1")
-
+display(f"Name: {name}", target="div1")
+display(f"Age: {age}", target="div1")
+display(f"Height: {height1}cm", target="div1")
+display(f"Countries wanting to visit: {', '.join(countries_)}", target="div1")
+display(f"New Student: {student_type}", target="div1")
+display(f"Favorite Color: {my_info['color']}", target="div1")
+display(f"Favorite Car Brand: {my_info['car_brand']}", target="div1")
+display(f"Shoe Size: {my_info['shoe_size']}", target="div1")
+display(f"Best Friend: {my_info['best_friend']}", target="div1")
+display(f"Favorite Fruits: {', '.join(favorite_fruits)}", target="div1")
+display(f"Days: {', '.join(days)}", target="div1")
 
 def adding_numbers(e):
     input1 = float(document.getElementById("input1").value)
     input2 = float(document.getElementById("input2").value)
     result = input1 + input2
+    document.getElementById("output1").innerHTML = ""
     display(result, target="output1")
 </script>
 
