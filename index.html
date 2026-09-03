@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css" />
+<script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+<title>Seatwork 1</title>
+
+
+</head>
+<body>
+
+
+<h1>Seatwork #1</h1>
+
+
+<div id="div1"></div>
+<br>
+
+
+       <form action="">
+        <input type="number" id="input1" placeholder="Enter 1st Number Value">
+        <br>
+
+
+         <input type="number" id="input2" placeholder="Enter 2nd Number Value">
+        <br>
+
+
+        <button type="button" py-click="adding_numbers">Calculate</button>
+
+
+<br>
+
+
+<div id="output1"></div>
+<script type="py">
+from pyscript import display
+from js import document
+
+
+display(target="div1") #literal object
+
+
+#variable objects
+name = "Name: Philip Ponce" #string 
+age = "Age: 15" #integer
+height = "Height: 167.6cm" #float
+countries = "Countries wanting to visit: Switzerland, Japan, Canada" #list
+student_type = "New Student: False" #bool
+color = "Favorite Color: Black" #dictionary
+car_brand = "Favorite Car Brand: Porsche" #dictionary
+shoe_size = "Shoe Size: 8" #dictionary
+best_friend = "Best Friend: Carlos Borromeo" #dictionary
+favorite_fruits = "Favorite Fruits: Plum, Mango, Banana, Aratilis, Grapes" #tuple
+days = "Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday" #tuple
+
+
+
+
+display(name, target="div1") 
+display(age, target="div1")
+display(height, target="div1")
+display(countries, target="div1")
+display(student_type, target="div1")
+display(color, target="div1")
+display(car_brand, target="div1")
+display(shoe_size, target="div1")
+display(best_friend, target="div1")
+display(favorite_fruits, target="div1")
+display(days, target="div1")
+
+
+def adding_numbers(e):
+    input1 = float(document.getElementById("input1").value)
+    input2 = float(document.getElementById("input2").value)
+    result = input1 + input2
+    display(result, target="output1")
+</script>
+
+
+</body>
+</html>
+
